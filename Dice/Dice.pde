@@ -2,10 +2,21 @@ void setup(){
   //no loop means that draw is only called once
   //OR if you ever call redraw()
   noLoop();
+  background(255,255,255);
+  size(750,750);
 }
 
 void draw(){
   //your code here
+  rect(100,100,100,100);
+  rect(325,100,100,100);
+  rect(550,100,100,100);
+  rect(100,300,100,100);
+  rect(325,300,100,100);
+  rect(550,300,100,100);
+  rect(100,600,100,100);
+  rect(325,600,100,100);
+  rect(550,600,100,100);
 }
 
 void mousePressed(){
