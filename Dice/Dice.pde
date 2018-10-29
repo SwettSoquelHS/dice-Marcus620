@@ -1,4 +1,5 @@
-Die dice1;
+Die[] dice = new Die[10];
+int roll;
 
 void setup()
 {
@@ -6,13 +7,28 @@ void setup()
   size(500, 500);
   background(255);
 
-  dice1 = new Die(width/2 + 85, height/2 + 75);
+  dice[0] = new Die(width/2 + 100, height/2 - 70);
+  dice[1] = new Die(width/2 - 50, height/2 - 70);
+  dice[2] = new Die(width/2 - 200, height/2 - 70);  
+  dice[3] = new Die(width/2 + 100, height/2 + 75);
+  dice[4] = new Die(width/2 - 50, height/2 + 75);
+  dice[5] = new Die(width/2 -200, height/2 + 75);
+  dice[6] = new Die(width/2 + 100, height/2 - 200);
+  dice[7] = new Die(width/2 - 50, height/2 - 200);
+  dice[8] = new Die(width/2 -200, height/2 - 200);
 }
 
 void draw()
 {
-  dice1.show();
-  //your code here
+  dice[0].show();
+  dice[1].show();
+  dice[2].show();
+  dice[3].show();
+  dice[4].show();
+  dice[5].show();
+  dice[6].show();
+  dice[7].show();
+  dice[8].show();
 }
 
 void mousePressed()
@@ -25,7 +41,6 @@ void mousePressed()
 class Die 
 {
   //variable declarations here
-  double roll = (Math.random() * 6 + 1);
   int x_pos;
   int y_pos;
 
@@ -37,46 +52,43 @@ class Die
   }
   void roll()
   {
-    double roll;
-    roll = (Math.random() * 6 + 1);
+
+    //roll = (int)(Math.random() * 6 - 1);
     //your code here
+    //roll = 2;
   }
   void show()
   {
-    pushMatrix();
+    // pushMatrix();
+    roll = (int)(Math.random() * 6 + 1);
     rect(x_pos, y_pos, 80, 80, 10);
-    if (roll == 1) {
-      fill(0);
+    fill((int)(Math.random() * 255),(int)(Math.random() * 255),(int)(Math.random() * 255));
+    if (roll > 0 && roll < 2) {
       ellipse(x_pos + 40, y_pos + 40, 10, 10);
     }
-    if (roll == 2) {
-      fill(0);
+    if (roll > 1 && roll < 3) {
       ellipse(x_pos + 60, y_pos + 20, 10, 10);
       ellipse(x_pos + 20, y_pos + 60, 10, 10);
     }
-    if (roll == 3) {
-      fill(0);
+    if (roll > 2 && roll < 4) {
       ellipse(x_pos + 20, y_pos + 60, 10, 10);
       ellipse(x_pos + 40, y_pos + 40, 10, 10);
       ellipse(x_pos + 60, y_pos + 20, 10, 10);
     }
-    if (roll == 4) {
-      fill(0);
+    if (roll > 3 && roll < 5) {
       ellipse(x_pos + 60, y_pos + 20, 10, 10);
       ellipse(x_pos + 20, y_pos + 60, 10, 10);      
       ellipse(x_pos + 60, y_pos + 60, 10, 10);
       ellipse(x_pos + 20, y_pos + 20, 10, 10);
     }
-    if (roll == 5) {
-      fill(0);
+    if (roll > 4 && roll < 6) {
       ellipse(x_pos + 60, y_pos + 20, 10, 10);
       ellipse(x_pos + 20, y_pos + 60, 10, 10);      
       ellipse(x_pos + 60, y_pos + 60, 10, 10);
       ellipse(x_pos + 20, y_pos + 20, 10, 10);
       ellipse(x_pos + 40, y_pos + 40, 10, 10);
     }
-    if (roll == 6) {
-      fill(0);
+    if (roll > 5 && roll < 7) {
       ellipse(x_pos + 60, y_pos + 20, 10, 10);
       ellipse(x_pos + 20, y_pos + 60, 10, 10);      
       ellipse(x_pos + 60, y_pos + 60, 10, 10);
@@ -84,7 +96,8 @@ class Die
       ellipse(x_pos + 20, y_pos + 40, 10, 10);
       ellipse(x_pos + 60, y_pos + 40, 10, 10);
     }
-    popMatrix();
+    fill(255);
+    // popMatrix();
     //your code here, this will draw what you imagine a die to look like
   }
 }
