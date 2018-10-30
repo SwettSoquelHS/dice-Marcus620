@@ -40,30 +40,22 @@ void mousePressed()
   redraw();
 }
 
-
-// Class Die, models one single role of a six sided die
 class Die 
 {
   //variable declarations here
   int x_pos;
   int y_pos;
 
-  Die(int x, int y) //constructor
+  Die(int x, int y)
   {
     x_pos = x;
     y_pos = y;
-    //variable initializations here
   }
   void roll()
   {
-
-    //roll = (int)(Math.random() * 6 - 1);
-    //your code here
-    //roll = 2;
   }
   void show()
   {
-    // pushMatrix();
     roll = (int)(Math.random() * 6 + 1);
     rect(x_pos, y_pos, 80, 80, 10);
     fill((int)(Math.random() * 255), (int)(Math.random() * 255), (int)(Math.random() * 255));
@@ -107,7 +99,5 @@ class Die
       total = total + 6;
     }
     fill(255);
-    // popMatrix();
-    //your code here, this will draw what you imagine a die to look like
   }
 }
