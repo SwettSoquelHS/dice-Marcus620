@@ -6,7 +6,7 @@ void setup()
 {
   noLoop();
   size(500, 500);
-  background(255);
+  background(0);
 
   dice[0] = new Die(width/2 + 100, height/2 - 70);
   dice[1] = new Die(width/2 - 50, height/2 - 70);
@@ -21,6 +21,7 @@ void setup()
 
 void draw()
 {
+  background(0);
   dice[0].show();
   dice[1].show();
   dice[2].show();
@@ -30,8 +31,9 @@ void draw()
   dice[6].show();
   dice[7].show();
   dice[8].show();
-  print(total);
-  total = 0;
+ 
+  textSize(20);
+  text("Total:" + total, 205, 450);
 }
 
 void mousePressed()
